@@ -1,0 +1,7 @@
+@mixin dark-theme {
+  --color-text: var(--color-white);
+  --color-background: var(--color-black);
+
+  --color-shadow: var(--shadow-dark-1);
+  --color-shadow-2: var(--shadow-light-2);
+}
