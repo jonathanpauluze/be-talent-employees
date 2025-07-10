@@ -1,0 +1,26 @@
+.typography {
+  font-family: var(--font-family-helvetica);
+
+  &--h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &--h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &--h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-regular);
+  }
+
+  &--regular {
+    font-weight: var(--font-weight-regular);
+  }
+
+  &--medium {
+    font-weight: var(--font-weight-medium);
+  }
+}
