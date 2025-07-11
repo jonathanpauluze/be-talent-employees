@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 import '../src/assets/styles/main.scss'
+import { themes } from '@storybook/theming'
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +9,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i
       }
+    },
+
+    docs: {
+      theme: themes.dark
     },
 
     a11y: {
