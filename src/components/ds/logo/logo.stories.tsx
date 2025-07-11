@@ -1,25 +1,44 @@
-import { Logo } from './'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { Logo } from './logo'
 
-export default {
+const meta: Meta<typeof Logo> = {
   title: 'Design System/Logo',
-  component: Logo
+  component: Logo,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen'
+  }
 }
 
-export const Default = () => <Logo />
+export default meta
 
-export const WithCustomClass = () => (
-  <>
-    <style>
-      {`
+type Story = StoryObj<typeof Logo>
+
+export const Default: Story = {
+  render: () => <Logo />
+}
+
+export const WithWidthAndHeight: Story = {
+  render: () => <Logo width={180} height={80} />
+}
+
+export const WithCustomClass: Story = {
+  render: () => (
+    <>
+      <style>
+        {`
         .custom {
-          witdh: 500px;
-          height: 500px;
-          object-fit: contain;
-          background-color: #FFF;
+          width: auto!important;
+          height: auto!important;
+          border: 4px solid #dc82ff;
+          border-radius: 1rem;
+          padding: 1rem;
+          background-color: #ffffff;
         }
       `}
-    </style>
+      </style>
 
-    <Logo className="custom" />
-  </>
-)
+      <Logo className="custom" />
+    </>
+  )
+}
