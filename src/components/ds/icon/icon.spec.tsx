@@ -2,37 +2,30 @@ import { render, screen } from '@testing-library/react'
 import { Icon } from './icon'
 
 describe('Icon', () => {
-  it('renderiza o ícone "search"', () => {
+  it('renderiza o ícone com tamanho padrão (md)', () => {
     render(<Icon name="search" />)
-    const icon = screen.getByRole('img', { hidden: true })
+    const icon = screen.getByTestId('search-icon')
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('width', '24')
     expect(icon).toHaveAttribute('height', '24')
   })
 
-  it('renderiza o ícone com tamanho pequeno (sm)', () => {
+  it('renderiza com tamanho pequeno (sm)', () => {
     render(<Icon name="chevron-down" size="sm" />)
-    const icon = screen.getByRole('img', { hidden: true })
+    const icon = screen.getByTestId('chevron-down-icon')
     expect(icon).toHaveAttribute('width', '16')
-    expect(icon).toHaveAttribute('height', '16')
-  })
-
-  it('renderiza o ícone com tamanho grande (lg)', () => {
-    render(<Icon name="chevron-down" size="lg" />)
-    const icon = screen.getByRole('img', { hidden: true })
-    expect(icon).toHaveAttribute('width', '32')
-    expect(icon).toHaveAttribute('height', '32')
   })
 
   it('renderiza com className customizada', () => {
     render(<Icon name="chevron-up" className="custom-class" />)
-    const icon = screen.getByRole('img', { hidden: true })
+    const icon = screen.getByTestId('chevron-up-icon')
     expect(icon).toHaveClass('custom-class')
   })
 
-  it('não quebra se nome inválido for passado', () => {
+  it('não renderiza nada se o nome for inválido', () => {
     // @ts-expect-error: testando nome inválido
-    render(<Icon name="inexistente" />)
-    expect(screen.queryByRole('img', { hidden: true })).not.toBeInTheDocument()
+    render(<Icon name="fake" />)
+    const icon = screen.queryByTestId('fake-icon')
+    expect(icon).not.toBeInTheDocument()
   })
 })

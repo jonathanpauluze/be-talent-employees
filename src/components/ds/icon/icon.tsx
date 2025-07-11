@@ -24,6 +24,7 @@ export const Icon = ({ name, size = 'md', className }: IconProps) => {
 
   return (
     <Component
+      data-testid={`${name}-icon`}
       width={dimension}
       height={dimension}
       className={classnames('icon', className)}
