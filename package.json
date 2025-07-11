@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test:unit": "vitest"
+    "test:unit": "vitest run --config vitest.config.unit.ts",
+    "test:unit:watch": "vitest run --config vitest.config.unit.ts --watch",
+    "test:stories": "vitest run --config vitest.config.storybook.ts"
   },
   "dependencies": {
     "react": "^19.1.0",
