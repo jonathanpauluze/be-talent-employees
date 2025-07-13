@@ -2,7 +2,8 @@ import { Typography } from './'
 
 export default {
   title: 'Design System/Typography',
-  component: Typography
+  component: Typography,
+  tags: ['autodocs']
 }
 
 export const Heading1 = () => <Typography as="h1">Heading 1</Typography>

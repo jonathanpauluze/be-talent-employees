@@ -23,6 +23,18 @@ export const Default: Story = {
   }
 }
 
+export const FullWidth: Story = {
+  render: (args) => {
+    const [value, setValue] = useState('')
+    return (
+      <div style={{ padding: 16 }}>
+        <Search {...args} value={value} onChange={setValue} fullWidth />
+        <p style={{ marginTop: 8 }}>Valor: {value}</p>
+      </div>
+    )
+  }
+}
+
 export const WithDebounce: Story = {
   args: {
     debounceTime: 1500

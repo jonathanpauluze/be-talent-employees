@@ -7,8 +7,11 @@
   border-radius: 0.5rem;
   padding: 0 var(--spacing-16);
   height: 3rem;
+  width: fit-content;
+}
+
+.fullWidth {
   width: 100%;
-  max-width: 360px;
 }
 
 .icon {

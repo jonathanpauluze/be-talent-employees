@@ -12,6 +12,11 @@
 .wrapper {
   width: 100%;
   font-family: inherit;
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-small);
 }
 
 .desktopOnly {
@@ -24,7 +29,6 @@
 
 .table {
   width: 100%;
-  border-collapse: collapse;
 
   thead {
     background-color: var(--color-primary);
@@ -64,8 +68,8 @@
   display: flex;
   gap: var(--spacing-16);
   padding: var(--spacing-16);
-  border-top-left-radius: var(--spacing-4);
-  border-top-right-radius: var(--spacing-4);
+  border-top-left-radius: var(--spacing-8);
+  border-top-right-radius: var(--spacing-8);
   font-weight: bold;
   background-color: var(--color-primary);
   color: var(--color-white);

@@ -12,11 +12,13 @@
     "build-storybook": "storybook build",
     "test:unit": "vitest run --config vitest.config.unit.ts",
     "test:unit:watch": "vitest run --config vitest.config.unit.ts --watch",
+    "test:coverage": "vitest --coverage",
     "test:stories": "vitest run --config vitest.config.storybook.ts"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router": "^7.6.3",
     "sass-embedded": "^1.89.2"
   },
   "devDependencies": {

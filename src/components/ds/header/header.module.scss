@@ -13,8 +13,10 @@
   }
 }
 
-.logoGroup {
+.headerContent {
   display: flex;
   align-items: center;
-  gap: var(--spacing-16);
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }

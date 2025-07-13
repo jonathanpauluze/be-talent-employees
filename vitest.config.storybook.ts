@@ -27,6 +27,12 @@ export default defineConfig({
     setupFiles: ['.storybook/vitest.setup.ts']
   },
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(dirname, './src') }]
+    alias: [
+      {
+        find: '@/ds',
+        replacement: path.resolve(dirname, './src/components/ds')
+      },
+      { find: '@', replacement: path.resolve(dirname, './src') }
+    ]
   }
 })

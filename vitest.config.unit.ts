@@ -16,9 +16,33 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     css: true,
-    include: ['src/**/*.spec.{ts,tsx}']
+    include: ['src/**/*.spec.{ts,tsx}'],
+    coverage: {
+      provider: 'v8',
+      reportsDirectory: 'coverage',
+      reporter: ['text', 'html'],
+      exclude: [
+        'node_modules',
+        'src/main.ts',
+        'src/domains/**/*.{tsx,ts}',
+        'src/lib/**/*.{tsx,ts}',
+        '**/*.stories*'
+      ],
+      include: [
+        'src/components/**/*.{tsx,ts}',
+        'src/domains/**/*.{tsx,ts}',
+        'src/hooks/**/*.{tsx,ts}',
+        'src/pages/**/*.{tsx,ts}'
+      ]
+    }
   },
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(dirname, './src') }]
+    alias: [
+      {
+        find: '@/ds',
+        replacement: path.resolve(dirname, './src/components/ds')
+      },
+      { find: '@', replacement: path.resolve(dirname, './src') }
+    ]
   }
 })
