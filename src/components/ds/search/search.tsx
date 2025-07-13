@@ -10,6 +10,7 @@ type SearchProps = {
   placeholder?: string
   className?: string
   debounceTime?: number
+  fullWidth?: boolean
 }
 
 export const Search = ({
@@ -17,7 +18,8 @@ export const Search = ({
   onChange,
   placeholder = 'Pesquisar',
   className,
-  debounceTime = 0
+  debounceTime = 0,
+  fullWidth
 }: SearchProps) => {
   const [internalValue, setInternalValue] = useState(value)
   const debouncedValue = useDebouncedValue(internalValue, debounceTime)
@@ -41,7 +43,11 @@ export const Search = ({
   }
 
   return (
-    <div className={classnames(styles.wrapper, className)}>
+    <div
+      className={classnames(styles.wrapper, className, {
+        [styles.fullWidth]: !!fullWidth
+      })}
+    >
       <input
         type="text"
         value={internalValue}
