@@ -40,7 +40,7 @@
   tbody {
     tr {
       box-shadow: var(--shadow-small);
-      background-color: var(--color-background);
+      background-color: var(--color-white);
       color: var(--color-text);
 
       td {
@@ -92,7 +92,7 @@
   box-sizing: border-box;
   width: 100%;
   cursor: pointer;
-  background-color: var(--color-background);
+  background-color: var(--color-white);
   color: var(--color-text);
   padding: var(--spacing-16);
   display: flex;
@@ -122,7 +122,7 @@
 
 .mobileDetails {
   padding: var(--spacing-16);
-  background-color: var(--color-background);
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
