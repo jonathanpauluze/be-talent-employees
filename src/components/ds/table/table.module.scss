@@ -1,0 +1,145 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-32);
+  color: var(--color-gray-20);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  font-family: inherit;
+}
+
+.desktopOnly {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+
+    th {
+      padding: var(--spacing-16);
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      box-shadow: var(--shadow-small);
+      background-color: var(--color-white);
+      color: var(--color-text);
+
+      td {
+        padding: var(--spacing-8) var(--spacing-16);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// ===== Mobile Table =====
+.mobileOnly {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobileHeader {
+  display: flex;
+  gap: var(--spacing-16);
+  padding: var(--spacing-16);
+  border-top-left-radius: var(--spacing-4);
+  border-top-right-radius: var(--spacing-4);
+  font-weight: bold;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-small);
+}
+
+.headerCell {
+  flex: 1;
+  text-align: left;
+}
+
+.mobileBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileRow {
+  overflow: hidden;
+  box-shadow: var(--shadow-small);
+}
+
+.mobileRowToggle {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: var(--spacing-16);
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: var(--color-primary);
+  }
+}
+
+.mobileSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-16);
+  width: 100%;
+
+  .cellContent {
+    flex: 1;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mobileDetails {
+  padding: var(--spacing-16);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--color-gray-20);
+  padding-bottom: var(--spacing-4);
+
+  .detailLabel {
+    font-weight: bold;
+    color: var(--color-text);
+  }
+
+  .detailValue {
+    color: var(--color-text);
+  }
+}

@@ -1,0 +1,44 @@
+@use './tokens.scss' as *;
+@use './light-theme.scss' as *;
+@use './dark-theme.scss' as *;
+
+:root {
+  @include tokens;
+  @include light-theme;
+}
+
+.dark {
+  @include dark-theme;
+}
+
+.light {
+  @include light-theme;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: all 0.5s;
+  line-height: 1.6;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
