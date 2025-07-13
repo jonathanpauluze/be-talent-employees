@@ -19,6 +19,12 @@ export default defineConfig({
     include: ['src/**/*.spec.{ts,tsx}']
   },
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(dirname, './src') }]
+    alias: [
+      { find: '@', replacement: path.resolve(dirname, './src') },
+      {
+        find: '@/ds',
+        replacement: path.resolve(dirname, './src/components/ds')
+      }
+    ]
   }
 })

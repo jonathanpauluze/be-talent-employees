@@ -17,6 +17,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: '@/ds',
+        replacement: path.resolve(dirname, './src/components/ds')
+      },
+      {
         find: '@',
         replacement: path.resolve(dirname, './src')
       }
