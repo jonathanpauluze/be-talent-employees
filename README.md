@@ -1,69 +1,106 @@
-# React + TypeScript + Vite
+# 💼 BeTalent Employees
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um teste prático feito para posição de Front-End na BeTalent. Trata-se da visualização de uma tabela com dados que são retornados de uma API simulada utilizando json-server.
 
-Currently, two official plugins are available:
+## 🛠️ Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi construído com:
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) - Biblioteca para construção de interfaces
+- [React Router (declarative)](https://reactrouter.com/start/modes#declarative) - Biblioteca para roteamento
+- [Vitest](https://vitest.dev/) - Framework para implementação de testes
+- [Testing Library](https://testing-library.com/) - Utilitário de testes
+- [ESLint](https://eslint.org/) - Ferramenta de lint para garantir qualidade do código
+- [pnpm](https://pnpm.io/pt/) - Gerenciador de pacotes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🏃 Como rodar o projeto?
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Primeiro acesse o diretório do projeto e instale as dependências
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```sh
+pnpm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# ou
+
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Para rodar o servidor mockado
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npx json-server@0.17 --watch db.json
 ```
+
+> Importante utilizar esta versão do `json-server` para funcionamento de filtro com sufixo `_like`
+
+Para compilar e ativar hot-reload para desenvolvimento
+
+```sh
+pnpm dev
+
+# ou
+
+npm run dev
+```
+
+Para rodar lint no código
+
+```sh
+pnpm lint
+
+# ou
+
+npm run lint
+```
+
+Para fazer Type-Check, compiar e minificar para build de produção
+
+```sh
+pnpm build
+
+# ou
+
+npm run build
+```
+
+Para rodar Storybook para visualizar componentes
+
+```sh
+pnpm storybook
+
+# ou
+
+npm run storybook
+```
+
+Para rodar testes unitários
+
+```sh
+pnpm test:unit
+
+# ou
+
+npm run test:unit
+```
+
+Para verificar o coverage
+
+```sh
+pnpm test:coverage
+
+# ou
+
+npm run test:coverage
+```
+
+E em um novo terminal, abra o index.html para visualizar página de coverage
+
+```sh
+open coverage/index.html
+```
+
+## 🚀 Features extras
+
+- 🧪 Testes unitários: Implementação de testes com mais de 90% de coverage
+- ⭐ Storybook: Os componentes do Design System estão com stories do Storybook para documentação.
+- 🔎 Busca com debounce: O componente `Search` possui implementação de debounce para evitar chamadas de `onChange` em cada tecla pressionada
