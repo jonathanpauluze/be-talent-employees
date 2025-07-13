@@ -1,4 +1,5 @@
 @mixin light-theme {
   --color-text: var(--color-black);
   --color-background: var(--color-gray-00);
+  --shadow-small: var(--shadow-small-light);
 }

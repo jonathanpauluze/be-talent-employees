@@ -15,12 +15,6 @@
   @include light-theme;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.light):not(.dark) {
-    @include dark-theme;
-  }
-}
-
 *,
 *::before,
 *::after {
