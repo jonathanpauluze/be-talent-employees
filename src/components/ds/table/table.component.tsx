@@ -123,7 +123,7 @@ export function Table<T>({
                   >
                     <div className={styles.mobileSummary}>
                       {visibleMobileColumns.map((col) => (
-                        <span
+                        <div
                           key={String(col.key)}
                           className={styles.cellContent}
                           style={{ maxWidth: col.width }}
@@ -131,7 +131,7 @@ export function Table<T>({
                           {col.render
                             ? col.render(row[col.key], row)
                             : String(row[col.key])}
-                        </span>
+                        </div>
                       ))}
 
                       {hasHiddenColumns ? (

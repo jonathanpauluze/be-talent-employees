@@ -1,0 +1,19 @@
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-28);
+  margin-bottom: var(--spacing-20);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: var(--spacing-32);
+  }
+}
+
+.searchWrapper {
+  @media (min-width: 768px) {
+    flex: 1;
+    max-width: 280px;
+  }
+}
