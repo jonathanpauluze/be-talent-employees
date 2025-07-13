@@ -32,7 +32,7 @@ export function EmployeesTable(props: Readonly<EmployeesTableProps>) {
     },
     {
       key: 'admission_date',
-      label: 'Admissão',
+      label: 'Data de admissão',
       render: (value) => {
         return new Intl.DateTimeFormat('pt-BR').format(new Date(value))
       },
